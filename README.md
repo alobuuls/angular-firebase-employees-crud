@@ -1,27 +1,161 @@
-# AngularFirestoreProject2
+# 🚀 Angular Firebase Employees CRUD
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+Aplicación desarrollada en **Angular 12** para la gestión de empleados, utilizando **Firebase Firestore** como base de datos en tiempo real. Permite realizar operaciones CRUD completas *(crear, leer, actualizar y eliminar empleados)* con formularios reactivos y arquitectura modular.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## ⚙️ Requisitos del sistema
 
-## Code scaffolding
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 📦 **Node.js:** `v14.x` o `v16.x` *(preferiblemente `v24.13.0`)*
+- 📦 **npm:** `v6+`
+- 🅰️ **Angular CLI:** `v12.x`
+- 🔥 **Proyecto configurado en Firebase Firestore**
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🔍 Verificar versiones instaladas
 
-## Running unit tests
+Ejecuta los siguientes comandos en la terminal:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+node -v
+npm -v
+ng version
+```
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Instalación del proyecto
 
-## Further help
+### 1️⃣ Clonar el repositorio
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone <URL_DEL_REPO>
+cd angular-firebase-employees-crud
+```
+
+### 2️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+---
+
+## 🔥 Configuración de Firebase
+
+Antes de ejecutar el proyecto, configura Firebase:
+
+1. Crear proyecto en Firebase Console
+2. Activar Firestore Database
+3. Configurar credenciales en:
+
+```bash
+src/environments/environment.ts
+```
+
+### Ejemplo de configuración
+
+```typescript
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "XXX",
+    authDomain: "XXX",
+    projectId: "XXX",
+    storageBucket: "XXX",
+    messagingSenderId: "XXX",
+    appId: "XXX"
+  }
+};
+```
+
+---
+
+## ▶️ Ejecutar el proyecto
+
+```bash
+ng serve
+```
+
+Luego abre en tu navegador:
+
+```bash
+http://localhost:4200
+```
+
+---
+
+## 🧠 Arquitectura del proyecto
+
+### 👨‍💼 Employees Module
+
+- `EmployeeComponent` → Formulario para crear y editar empleados
+- `EmployeeListComponent` → Lista de empleados con acciones
+- `EmployeesComponent` → Layout principal del módulo
+
+### 🧠 Shared Layer
+
+- `EmployeeService` → Comunicación con Firebase Firestore
+- `EmployeeModel` → Estructura de datos del empleado
+
+---
+
+## ⚙️ Funcionalidades principales
+
+- ➕ Crear empleados
+- 📋 Listar empleados en tiempo real
+- ✏️ Editar empleados
+- ❌ Eliminar empleados
+- 🔥 Integración con Firebase Firestore
+- 🎯 Validación de formularios
+- 💬 Notificaciones con Toastr
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- 🅰️ Angular 12
+- 🔥 Firebase Firestore
+- ⚡ TypeScript
+- 🎨 Bootstrap
+- 💬 ngx-toastr
+- 🧾 Angular Forms
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/
+├── app/
+│   ├── employees/
+│   │   ├── employee/
+│   │   ├── employee-list/
+│   │   └── employees.component.ts
+│   ├── shared/
+│   │   ├── employee.model.ts
+│   │   └── employee.service.ts
+│   ├── app.module.ts
+│   └── app.component.ts
+├── environments/
+```
+
+---
+
+## 🔥 Buenas prácticas implementadas
+
+- Separación de responsabilidades *(components / services / models)*
+- Uso de servicios inyectables
+- CRUD en tiempo real con Firestore
+- Arquitectura modular
+- Formularios reactivos y template-driven
+- Código reutilizable y escalable
+
+---
+
+## 📄 Licencia
+
+Proyecto con fines educativos y de portafolio.
