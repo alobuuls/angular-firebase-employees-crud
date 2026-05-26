@@ -1,0 +1,45 @@
+<table class="table table-hover">
+  <thead>
+    <th>
+      Name
+    </th>
+
+    <th>
+      Position
+    </th>
+
+    <th>
+      Mobile
+    </th>
+
+    <th>
+      Actions
+    </th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let emp of list">
+      <td>
+        {{ emp.empCode }} - {{ emp.fullName }}
+      </td>
+
+      <td>
+        {{ emp.position }}
+      </td>
+
+      <td>
+        {{ emp.mobile }}
+      </td>
+
+      <td>
+        <button class="btn btn-primary" (click)="onEdit(emp)">
+          <i class="fa fa-edit"></i>
+        </button>
+
+        <button class="btn btn-danger" (click)="onDelete(emp)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
