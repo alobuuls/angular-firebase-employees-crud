@@ -1,23 +1,69 @@
-# 🚀 Angular Firebase Employees CRUD
+<h1 align="center">🔥 Angular Firebase Employees CRUD</h1>
 
-Aplicación desarrollada en **Angular 12** para la gestión de empleados, utilizando **Firebase Firestore** como base de datos en tiempo real. Permite realizar operaciones CRUD completas *(crear, leer, actualizar y eliminar empleados)* con formularios reactivos y arquitectura modular.
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-12-DD0031?logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/Firebase-Firestore-FFCA28?logo=firebase&logoColor=black" alt="Firebase Firestore" />
+  <img src="https://img.shields.io/badge/TypeScript-4.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen" alt="Completed" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/alobuuls/angular-firebase-employees-crud" target="_blank"><img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white" alt="Repository" /></a>
+  <a href="https://github.com/alobuuls/angular-firebase-employees-crud/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/alobuuls/angular-firebase-employees-crud?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/alobuuls/angular-firebase-employees-crud/commits/main" target="_blank"><img src="https://img.shields.io/github/last-commit/alobuuls/angular-firebase-employees-crud" alt="Last Commit" /></a>
+</p>
 
 ---
 
-## ⚙️ Requisitos del sistema
+## 📑 Table of Contents
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+* [🔥 Angular Firebase Employees CRUD](#-angular-firebase-employees-crud)
 
-- 📦 **Node.js:** `v14.x` o `v16.x` *(preferiblemente `v24.13.0`)*
+  * [🌐 Live Demo](#-live-demo)
+  * [📖 Description](#-description)
+  * [⚙️ System Requirements](#️-system-requirements)
+  * [🚀 Project Installation](#-project-installation)
+  * [▶️ Run the Project](#️-run-the-project)
+  * [🔥 Firebase Configuration](#-firebase-configuration)
+  * [🧠 Project Architecture](#-project-architecture)
+  * [✨ Features](#-features)
+  * [🛠 Technologies Used](#-technologies-used)
+  * [📁 Project Structure](#-project-structure)
+  * [🔥 Best Practices Implemented](#-best-practices-implemented)
+  * [🎯 Project Goal](#-project-goal)
+  * [📄 License](#-license)
+
+---
+
+## 🌐 Live Demo
+
+🔗 https://alobuuls.github.io/angular-firebase-employees-crud/
+
+---
+
+## 📖 Description
+
+> [!NOTE]
+> An Angular application that implements a complete employee management system using Firebase Firestore as a real-time database.
+
+The project demonstrates full CRUD operations, reactive forms, real-time data synchronization, service-based architecture, and scalable Angular development practices through a modern employee management dashboard.
+
+---
+
+## ⚙️ System Requirements
+
+Before running the project, make sure you have installed:
+
+- 📦 **Node.js:** `v12.14.x – v14.x` *(recommended: v14.21.3 LTS)*
 - 📦 **npm:** `v6+`
 - 🅰️ **Angular CLI:** `v12.x`
-- 🔥 **Proyecto configurado en Firebase Firestore**
+- 🔥 **Firebase Project** with Firestore enabled
 
 ---
 
-## 🔍 Verificar versiones instaladas
+## 🔍 Verify Installed Versions
 
-Ejecuta los siguientes comandos en la terminal:
+Run the following commands in your terminal:
 
 ```bash
 node -v
@@ -27,16 +73,17 @@ ng version
 
 ---
 
-## 🚀 Instalación del proyecto
+## 🚀 Project Installation
 
-### 1️⃣ Clonar el repositorio
+### 1️⃣ Clone the repository
 
 ```bash
-git clone <URL_DEL_REPO>
+git clone git@github.com:alobuuls/angular-firebase-employees-crud.git
+
 cd angular-firebase-employees-crud
 ```
 
-### 2️⃣ Instalar dependencias
+### 2️⃣ Install dependencies
 
 ```bash
 npm install
@@ -44,118 +91,194 @@ npm install
 
 ---
 
-## 🔥 Configuración de Firebase
+## ▶️ Run the Project
 
-Antes de ejecutar el proyecto, configura Firebase:
-
-1. Crear proyecto en Firebase Console
-2. Activar Firestore Database
-3. Configurar credenciales en:
+Start the development server:
 
 ```bash
+ng serve
+```
+
+Then open:
+
+```text
+http://localhost:4200
+```
+
+---
+
+## 🔥 Firebase Configuration
+
+Before running the application, create a Firebase project and enable Firestore Database.
+
+Configure your credentials inside:
+
+```ts
 src/environments/environment.ts
 ```
 
-### Ejemplo de configuración
+Example:
 
-```typescript
+```ts
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "XXX",
-    authDomain: "XXX",
-    projectId: "XXX",
-    storageBucket: "XXX",
-    messagingSenderId: "XXX",
-    appId: "XXX"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "XXXXXXXX",
+    appId: "XXXXXXXX"
   }
 };
 ```
 
 ---
 
-## ▶️ Ejecutar el proyecto
+## 🧠 Project Architecture
 
-```bash
-ng serve
+The application follows a modular architecture based on components, services, and models.
+
+### 📦 EmployeesComponent
+
+Responsible for:
+
+* Employee module layout
+* Component orchestration
+* CRUD workflow coordination
+
+### 📦 EmployeeComponent
+
+Responsible for:
+
+* Employee creation
+* Employee editing
+* Form validation
+* Form state management
+
+### 📦 EmployeeListComponent
+
+Responsible for:
+
+* Employee listing
+* Record selection
+* Delete actions
+* Real-time updates
+
+### 📦 EmployeeService
+
+Responsible for:
+
+* Firestore communication
+* CRUD operations
+* Data synchronization
+* Business logic abstraction
+
+### 📦 Employee Model
+
+Responsible for:
+
+* Employee entity structure
+* Type safety
+* Data consistency
+
+---
+
+## ✨ Features
+
+* ➕ Create employees
+* 📋 Read employee records
+* ✏️ Update employee information
+* ❌ Delete employees
+* 🔥 Real-time Firestore synchronization
+* 🧾 Angular Forms integration
+* 🎯 Form validation
+* 💬 Toastr notifications
+* ⚡ Reactive UI updates
+* 🧩 Service-based architecture
+* 🚀 Scalable project structure
+
+---
+
+## 🛠 Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Angular 12 | Front-End Framework |
+| Firebase Firestore | Real-Time Database |
+| TypeScript | Application Logic |
+| Angular Forms | Form Management |
+| Bootstrap | UI Styling |
+| ngx-toastr | Notifications |
+| HTML5 | Structure |
+| CSS3 | Styling |
+
+---
+
+## 📁 Project Structure
+
+```text
+angular-firebase-employees-crud/
+
+├── src/
+│   ├── app/
+│   │   ├── employees/
+│   │   │   ├── employee/
+│   │   │   ├── employee-list/
+│   │   │   └── employees.component.ts
+│   │   │
+│   │   ├── shared/
+│   │   │   ├── employee.model.ts
+│   │   │   └── employee.service.ts
+│   │   │
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
+│   │
+│   ├── environments/
+│   │   ├── environment.ts
+│   │   └── environment.prod.ts
+│   │
+│   └── main.ts
+│
+├── package.json
+├── angular.json
+└── README.md
 ```
 
-Luego abre en tu navegador:
+---
 
-```bash
-http://localhost:4200
-```
+## 🔥 Best Practices Implemented
+
+* Strong typing with TypeScript
+* Service-based architecture
+* Separation of concerns
+* Dependency injection
+* Firebase abstraction layer
+* Component reusability
+* Form validation patterns
+* Real-time data synchronization
+* Scalable project organization
+* Maintainable code structure
 
 ---
 
-## 🧠 Arquitectura del proyecto
+## 🎯 Project Goal
 
-### 👨‍💼 Employees Module
+Practice and strengthen Angular and Firebase concepts through the implementation of a real-world CRUD application:
 
-- `EmployeeComponent` → Formulario para crear y editar empleados
-- `EmployeeListComponent` → Lista de empleados con acciones
-- `EmployeesComponent` → Layout principal del módulo
-
-### 🧠 Shared Layer
-
-- `EmployeeService` → Comunicación con Firebase Firestore
-- `EmployeeModel` → Estructura de datos del empleado
-
----
-
-## ⚙️ Funcionalidades principales
-
-- ➕ Crear empleados
-- 📋 Listar empleados en tiempo real
-- ✏️ Editar empleados
-- ❌ Eliminar empleados
-- 🔥 Integración con Firebase Firestore
-- 🎯 Validación de formularios
-- 💬 Notificaciones con Toastr
+* Firebase Firestore Integration
+* CRUD Operations
+* Angular Forms
+* Service Architecture
+* TypeScript Modeling
+* Real-Time Data Handling
+* Dependency Injection
+* Scalable Front-End Development
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 📄 License
 
-- 🅰️ Angular 12
-- 🔥 Firebase Firestore
-- ⚡ TypeScript
-- 🎨 Bootstrap
-- 💬 ngx-toastr
-- 🧾 Angular Forms
+This project is intended for educational and portfolio purposes.
 
----
-
-## 📁 Estructura del proyecto
-
-```bash
-src/
-├── app/
-│   ├── employees/
-│   │   ├── employee/
-│   │   ├── employee-list/
-│   │   └── employees.component.ts
-│   ├── shared/
-│   │   ├── employee.model.ts
-│   │   └── employee.service.ts
-│   ├── app.module.ts
-│   └── app.component.ts
-├── environments/
-```
-
----
-
-## 🔥 Buenas prácticas implementadas
-
-- Separación de responsabilidades *(components / services / models)*
-- Uso de servicios inyectables
-- CRUD en tiempo real con Firestore
-- Arquitectura modular
-- Formularios reactivos y template-driven
-- Código reutilizable y escalable
-
----
-
-## 📄 Licencia
-
-Proyecto con fines educativos y de portafolio.
+Created by **Alondra Francisco**.
